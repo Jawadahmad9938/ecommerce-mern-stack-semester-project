@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - My E-Store</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://www.zarla.com/images/zarla-shop-stock-1x1-2400x2400-20220124-whpcxxkhjbj4ppxxrycg.png?crop=1:1,smart&width=250&dpr=2" alt="Logo">
+      <h1>Shop Stock</h1>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="front.html"><span>🏠</span>Home</a></li>
+      <li><a href="products.html"><span>🛒</span>Products</a></li>
+      <li><a href="cart.html"><span>🛍️</span>Cart</a></li>
+      <li><a href="contact.html"><span>📞</span>Contact</a></li>
+    </ul>
+  </nav>
+
+    
+    <!-- Mobile Footer Navbar -->
+    <div class="mobile-footer">
+      <a href="index.html">
+        <span>🏠</span>
+        Home
+      </a>
+      <a href="products.html">
+        <span>🛒</span>
+        Products
+      </a>
+      <a href="cart.html">
+        <span>🛍️</span>
+        Cart
+      </a>
+      <a href="contact.html">
+        <span>📞</span>
+        Contact
+      </a>
+    </div>
+
+  <!-- Products Section -->
+  <section class="products">
+    <h2>Our Products</h2>
+
+    <!-- Filter and Sort Options -->
+    <div class="filter-sort">
+      <div class="filter">
+        <label for="category">Filter by Category:</label>
+        <select id="category" name="category">
+          <option value="all">All</option>
+          <option value="food">Food</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothing">Clothing</option>
+        </select>
+      </div>
+
+      <div class="sort">
+        <label for="sort">Sort by:</label>
+        <select id="sort" name="sort">
+          <option value="price-low-high">Price: Low to High</option>
+          <option value="price-high-low">Price: High to Low</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card" data-category="food">
+        <img src="https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mjl8fHxlbnwwfHx8fHw%3D" alt="Product 1">
+        <h3>Eggs</h3>
+        <p>$20.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      
+      <!-- Product 2 -->
+      <div class="product-card" data-category="food">
+        <img src="https://images.unsplash.com/photo-1473229903343-d7903343f6c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjZ8fHxlbnwwfHx8fHw%3D" alt="Product 2">
+        <h3>Bowl of Grapes</h3>
+        <p>$50.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      
+      <!-- Product 3 -->
+      <div class="product-card" data-category="food">
+        <img src="https://images.unsplash.com/photo-1487790343276-2fe56a7d9439?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTd8fHxlbnwwfHx8fHw%3D" alt="Product 3">
+        <h3>Pan Cake</h3>
+        <p>$30.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <!-- Product 4 -->
+      <div class="product-card" data-category="food">
+          <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D" alt="Product 3">
+          <h3>Pork Chop Dinner</h3>
+          <p>$15.00</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <!-- Product 5 -->
+    <div class="product-card" data-category="food">
+        <img src="https://images.unsplash.com/photo-1495480137269-ff29bd0a695c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mzl8fHxlbnwwfHx8fHw%3D" alt="Product 4">
+        <h3>Bunch of berries</h3>
+        <p>$25.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="food">
+        <img src="https://images.unsplash.com/photo-1498588747262-0f2241707d13?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fHw%3D" alt="Product 5">
+        <h3>Brulee’d bananas</h3>
+        <p>$40.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="food">
+        <img src="https://images.unsplash.com/photo-1495480137269-ff29bd0a695c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mzl8fHxlbnwwfHx8fHw%3D" alt="Product 6">
+        <h3>Cherries</h3>
+        <p>$32.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="food">
+        <img src="https://images.unsplash.com/photo-1463740839922-2d3b7e426a56?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3D" alt="Product 7">
+        <h3>Bowl of Grapes</h3>
+        <p>$35.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://plus.unsplash.com/premium_photo-1663045990033-35c6e6bfc22e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGVsZWN0cm9uaWNzfGVufDB8fDB8fHww" alt="Product 3">
+        <h3>Chip</h3>
+        <p>$30.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://plus.unsplash.com/premium_photo-1679079456083-9f288e224e96?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3Ryb25pY3N8ZW58MHx8MHx8fDA%3D" alt="Product 9">
+        <h3>Laptop</h3>
+        <p>$3550.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1649859398731-d3c4ebca53fc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGVsZWN0cm9uaWNzfGVufDB8fDB8fHww" alt="Product 10">
+        <h3>Smartphone</h3>
+        <p>$300.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1523395243481-163f8f6155ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D3D" alt="Product 11">
+        <h3>Smartwatch</h3>
+        <p>$20.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1524656855800-59465ebcec69?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGlwaG9uZXxlbnwwfHwwfHx8MA%3D%3D" alt="Product 12">
+        <h3>Apple Laptop</h3>
+        <p>$3000.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1603351154351-5e2d0600bb77?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWlycG9kc3xlbnwwfHwwfHx8MA%3D%3D" alt="Product 13">
+        <h3>Airpods</h3>
+        <p>$30.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFpcnBvZHN8ZW58MHx8MHx8fDA%3D" alt="Product 14">
+        <h3>Airpods</h3>
+        <p>$30.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D" alt="Product 15">
+        <h3>Headphones</h3>
+        <p>$30.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D" alt="Product 16">
+        <h3>Headphones</h3>
+        <p>$75.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="electronics">
+        <img src="https://images.unsplash.com/photo-1601814837661-ce2832acd413?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhlYWRwaG9uZXN8ZW58MHx8MHx8fDA%3D" alt="Product 17">
+        <h3>Rode Latest</h3>
+        <p>$300.00</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- <script>
+    
+  </script> -->
+  
+  <script src="js/products.js"></script>
+
+</body>
+</html>

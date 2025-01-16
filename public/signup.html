@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Sign-Up Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000000, #434343, #ff8008);
+    }
+
+    .form-container {
+      background: #fff;
+      color: #333;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #3b3f8f;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      background: #6c63ff;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background: #5754d5;
+    }
+
+    .form-container .error-message {
+      color: red;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .user-profile {
+      display: none;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .user-profile img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .user-profile span {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .user-profile button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #ff4d4d;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .user-profile button:hover {
+      background: #d13c3c;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="email" name="email" placeholder="Gmail" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="error-message" id="error-message"></div>
+
+    <!-- User Profile Section -->
+    <div class="user-profile" id="user-profile">
+      <img id="profile-pic" src="/img/default-profile.png" alt="Profile Picture">
+      <span id="profile-username"></span>
+      <button id="logout-button">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+
+      // Send signup request
+      const response = await fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Save user information in localStorage
+        localStorage.setItem('username', formData.get('username'));
+        localStorage.setItem('email', formData.get('email'));
+        localStorage.setItem('profilePic', '/img/default-profile.png'); // Default profile picture path
+
+        // Redirect to the front.html page
+        window.location.href = 'front.html';
+      } else {
+        // Show error message
+        document.getElementById('error-message').textContent = result.error;
+      }
+    });
+  </script>
+</body>
+</html>

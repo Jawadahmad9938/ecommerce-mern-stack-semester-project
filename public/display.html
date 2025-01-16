@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display details</title>
+    <link rel="stylesheet" href="css/display.css">
+    <style>
+        #details{
+            color:green ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Details</h1>
+    <p><strong>Name:</strong> <span id="displayName"></span></p>
+    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+    <p><strong>Age:</strong> <span id="displayAge"></span></p>
+    <p><strong>Phone:</strong> <span id="displayphone"></span></p>
+    <p><strong>Address:</strong> <span id="displayaddress"></span></p>
+    <p><strong>CNIC:</strong> <span id="displaycnic"></span></p>
+    <p><strong>Password:</strong> <span id="displaypassword"></span></p>
+
+    <p id="details"><strong>Your order will be delivered in 7 working days in Pakistan.</strong></p>
+    <p id="details"><strong>Our payment method is only cash on delivery.</strong></p>
+
+    
+    <button onclick="redirectToEdit()">Edit Information</button>
+
+    <script>
+        
+        const name = localStorage.getItem('name');
+        const email = localStorage.getItem('email');
+        const age = localStorage.getItem('age');
+        const phone = localStorage.getItem('phone');
+        const address = localStorage.getItem('address');
+        const cnic = localStorage.getItem('cnic');
+        const password = localStorage.getItem('password');
+
+
+        document.getElementById('displayName').textContent = name;
+        document.getElementById('displayEmail').textContent = email;
+        document.getElementById('displayAge').textContent = age;
+        document.getElementById('displayphone').textContent = phone;
+        document.getElementById('displayaddress').textContent = address;
+        document.getElementById('displaycnic').textContent = cnic;
+        document.getElementById('displaypassword').textContent = password;
+
+
+        function redirectToEdit() {
+            window.location.href = "edit.html";
+        }
+    </script>
+</body>
+</html>

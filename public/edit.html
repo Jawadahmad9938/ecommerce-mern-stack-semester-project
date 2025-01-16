@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Information</title>
+  <link rel="stylesheet" href="css/display.css"> 
+</head>
+<body>
+  <h1>Edit Your Information</h1>
+  <form id="editForm">
+    <label for="name">Name:</label>
+    <br>
+    <input type="text" id="name" name="name" required><br><br>
+
+
+    <label for="email">Email:</label>
+    <br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    
+    <label for="age">Age:</label>
+    <br>
+    <input type="number" id="age" name="age" required><br><br>
+
+
+    <label for="phone">Phone Number:</label>
+    <br>
+    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+    <br>
+    <small>Format: 123-456-7890</small><br><br>
+
+
+    <label for="address">Address:</label>
+    <br>
+    <input type="text" id="address" name="address" required><br><br>
+
+
+    <label for="cnic">CNIC Number:</label>
+    <br>
+    <input type="text" id="cnic" name="cnic" placeholder="12345-1234567-1" pattern="[0-9]{5}-[0-9]{7}-[0-9]" required>
+    <br>
+    <small>Format: 12345-1234567-1</small><br><br>
+
+
+    <label for="password">Password:</label>
+    <br>
+    <input type="password" id="password" name="password" minlength="8" required>
+    <br>
+    <small>Password must be at least 8 characters long.</small><br><br>
+
+
+    <button type="button" onclick="saveChanges()">Save Changes</button>
+  </form>
+
+  <script>
+    
+    function populateForm() {
+      const name = localStorage.getItem("name");
+      const email = localStorage.getItem("email");
+      const age = localStorage.getItem("age");
+      const phone = localStorage.getItem("phone");
+      const address = localStorage.getItem("address");
+      const cnic = localStorage.getItem("cnic");
+      const password = localStorage.getItem("password");
+
+      
+      if (name) document.getElementById("name").value = name;
+      if (email) document.getElementById("email").value = email;
+      if (age) document.getElementById("age").value = age;
+      if (phone) document.getElementById("phone").value = phone;
+      if (address) document.getElementById("address").value = address;
+      if (cnic) document.getElementById("cnic").value = cnic;
+      if (password) document.getElementById("password").value = password;
+    }
+
+    function saveChanges() {
+      
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const cnic = document.getElementById("cnic").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+
+      if (!name || !email || !age || !phone || !address || !cnic || !password) {
+        alert("Please fill in all fields before saving changes.");
+        return;
+      }
+
+
+      if (password.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return;
+      }
+
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("age", age);
+      localStorage.setItem("phone", phone);
+      localStorage.setItem("address", address);
+      localStorage.setItem("cnic", cnic);
+      localStorage.setItem("password", password);
+
+      
+      alert("Your information has been updated successfully!");
+      window.location.href = "display.html"; 
+    }
+
+    window.onload = populateForm;
+  </script>
+</body>
+</html>
